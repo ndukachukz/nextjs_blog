@@ -1,6 +1,10 @@
-import Post from "./Post.type";
+import * as Post from "./Post.type";
 import Author from "./Author.type";
 
 type createdAt = string;
 
-export type { Post, Author, createdAt };
+interface featuredImage {
+  url: string;
+}
+
+export type { Post, Author, createdAt, featuredImage };

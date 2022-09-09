@@ -1,6 +1,6 @@
 import { Post } from "../types";
 import Link from "next/link";
-import momment from "momment";
+import moment from "moment";
 
 interface PostCardProps {
   post: Post;
@@ -50,7 +50,7 @@ const PostCard = ({
             />
           </svg>
           <span>
-            {momment(createdAt).format("MMM DD, YYYY") /* createdAt */}
+            {moment(createdAt).format("MMM DD, YYYY") /* createdAt */}
           </span>
         </div>
       </div>

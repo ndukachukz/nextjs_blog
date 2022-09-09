@@ -1,11 +1,11 @@
 import Link from "next/link";
-
-const categories = [
-  { name: "Nulla ex ", slug: "react" },
-  { name: "web developemnt", slug: "web-dev" },
-];
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 const Header = () => {
+  const categories = useSelector((state: RootState) => state.categories);
+
+  console.log("categories => ", categories);
   return (
     <div className="container mx-auto px-10 mb-10">
       <div className="border-b w-full inline-block border-blue-400 py-8">
@@ -18,7 +18,7 @@ const Header = () => {
         </div>
         <div className="hidden md:float-left md:contents">
           {categories.map((category, i) => (
-            <Link key={i + category.slug} href={`category/${category.slug}`}>
+            <Link key={i + category.slug} href={`/category/${category.slug}`}>
               <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
                 {category.name}
               </span>

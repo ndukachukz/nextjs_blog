@@ -5,18 +5,6 @@ import { Post } from "../types";
 import { getPost } from "../services";
 import { useEffect } from "react";
 
-/* const posts: Array<Post> = [
-  {
-    title: "React Testing",
-    excerpt: "Nulla aliqua fugiat occaecat irure.",
-  },
-  {
-    title: "lorem testing",
-    excerpt:
-      "LoremLaboris aliqua eu excepteur non irure pariatur pariatur sit incididunt id.",
-  },
-]; */
-
 interface Props {
   posts: Array<any>;
 }
