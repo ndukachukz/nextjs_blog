@@ -6,6 +6,7 @@ interface Author {
     url: string;
   };
   createdAt: createdAt;
+  bio: string;
 }
 
 export default Author;

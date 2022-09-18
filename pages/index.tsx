@@ -1,17 +1,20 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { Categories, PostCard, PostWidget } from "../components";
-import { Post } from "../types";
-import { getPost } from "../services";
+import { getCategories, getPosts } from "../services";
 import { useEffect } from "react";
+import { useAppDispatch } from "../app/hooks";
+import { setCategories } from "../features/categories/categoriesSlice";
 
 interface Props {
   posts: Array<any>;
 }
 
 const Home: NextPage<Props> = ({ posts }) => {
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    console.log({ posts });
+    getCategories().then((result) => dispatch(setCategories(result)));
   }, []);
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -41,7 +44,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = (await getPost()) || [];
+  const posts = (await getPosts()) || [];
 
   return {
     props: { posts },

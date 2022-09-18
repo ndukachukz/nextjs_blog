@@ -3,7 +3,7 @@ import Link from "next/link";
 import moment from "moment";
 
 interface PostCardProps {
-  post: Post;
+  post: Post.default;
 }
 const PostCard = ({
   post: { title, excerpt, featuredImage, slug, exerpt, author, createdAt },

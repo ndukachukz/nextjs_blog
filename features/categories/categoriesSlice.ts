@@ -9,7 +9,7 @@ export const categoriesSlice = createSlice({
   initialState,
   reducers: {
     setCategories(state, action: PayloadAction<Post.Category[]>) {
-      return (state = [...action.payload]);
+      return (state = action.payload);
     },
   },
 });

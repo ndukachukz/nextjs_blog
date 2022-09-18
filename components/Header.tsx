@@ -5,7 +5,6 @@ import { RootState } from "../app/store";
 const Header = () => {
   const categories = useSelector((state: RootState) => state.categories);
 
-  console.log("categories => ", categories);
   return (
     <div className="container mx-auto px-10 mb-10">
       <div className="border-b w-full inline-block border-blue-400 py-8">
